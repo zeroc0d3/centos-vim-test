@@ -1,5 +1,5 @@
 # CentOS Vim Docker (Vim Container)
-[![Build Status](https://travis-ci.org/zeroc0d3lab/centos-vim.svg?branch=master)](https://travis-ci.org/zeroc0d3lab/centos-vim) [![](https://images.microbadger.com/badges/image/zeroc0d3lab/centos-vim:latest.svg)](https://microbadger.com/images/zeroc0d3lab/centos-vim:latest "Layers") [![](https://images.microbadger.com/badges/version/zeroc0d3lab/centos-vim:latest.svg)](https://microbadger.com/images/zeroc0d3lab/centos-vim:latest "Version") [![GitHub issues](https://img.shields.io/github/issues/zeroc0d3lab/centos-vim.svg)](https://github.com/zeroc0d3lab/centos-vim/issues) [![GitHub forks](https://img.shields.io/github/forks/zeroc0d3lab/centos-vim.svg)](https://github.com/zeroc0d3lab/centos-vim/network) [![GitHub stars](https://img.shields.io/github/stars/zeroc0d3lab/centos-vim.svg)](https://github.com/zeroc0d3lab/centos-vim/stargazers) [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/zeroc0d3lab/centos-vim/master/LICENSE)
+[![Build Status](https://travis-ci.org/zeroc0d3/centos-vim-test.svg?branch=master)](https://travis-ci.org/zeroc0d3/centos-vim-test) [![](https://images.microbadger.com/badges/image/zeroc0d3/centos-vim-test:latest.svg)](https://microbadger.com/images/zeroc0d3/centos-vim-test:latest "Layers") [![](https://images.microbadger.com/badges/version/zeroc0d3/centos-vim-test:latest.svg)](https://microbadger.com/images/zeroc0d3/centos-vim-test:latest "Version") [![GitHub issues](https://img.shields.io/github/issues/zeroc0d3/centos-vim-test.svg)](https://github.com/zeroc0d3/centos-vim-test/issues) [![GitHub forks](https://img.shields.io/github/forks/zeroc0d3/centos-vim-test.svg)](https://github.com/zeroc0d3/centos-vim-test/network) [![GitHub stars](https://img.shields.io/github/stars/zeroc0d3/centos-vim-test.svg)](https://github.com/zeroc0d3/centos-vim-test/stargazers) [![GitHub license](https://img.shields.io/badge/license-GPLv2-blue.svg)](https://raw.githubusercontent.com/zeroc0d3/centos-vim-test/master/LICENSE)
 
 This docker image includes:
 
@@ -43,4 +43,4 @@ You can run docker-compose for different environment with selected containers
   ```
 
 ## License
-[**GNU General Public License v2**](https://github.com/zeroc0d3lab/centos-vim/blob/master/LICENSE)
+[**GNU General Public License v2**](https://github.com/zeroc0d3/centos-vim-test/blob/master/LICENSE)
