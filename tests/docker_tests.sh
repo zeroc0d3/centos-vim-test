@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOCKER_IMAGE="zeroc0d3lab/centos-vim"
+DOCKER_IMAGE="zeroc0d3/centos-vim-test"
 DOCKER_TAG="latest"
 
 #### Halt script on error
