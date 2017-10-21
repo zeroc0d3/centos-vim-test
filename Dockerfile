@@ -51,9 +51,9 @@ RUN $SHELL
 #-----------------------------------------------------------------------------
 # Install Lua
 #-----------------------------------------------------------------------------
-COPY ./rootfs/opt/lua-5.3.4.tar.gz /opt/lua-5.3.4.tar.gz
-RUN curl -L http://luarocks.github.io/luarocks/releases/luarocks-2.4.3.tar.gz \
-      -o /opt/luarocks-2.4.3.tar.gz
+RUN curl -L http://www.lua.org/ftp/lua-5.3.4.tar.gz -o /opt/lua-5.3.4.tar.gz \
+    && curl -L http://luarocks.github.io/luarocks/releases/luarocks-2.4.3.tar.gz \
+         -o /opt/luarocks-2.4.3.tar.gz
 
 RUN cd /opt \
     && tar zxvf lua-5.3.4.tar.gz \
