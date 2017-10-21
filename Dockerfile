@@ -5,6 +5,8 @@ MAINTAINER ZeroC0D3 Team <zeroc0d3.team@gmail.com>
 # Set Environment
 #-----------------------------------------------------------------------------
 ENV VIM_VERSION=8.0.1207 \
+    LUA_VERSION=5.3.4 \
+    LUAROCKS_VERSION=2.4.3 \
     PATH_HOME=/home/docker \
     PATH_WORKSPACE=/home/docker/workspace
 
@@ -51,20 +53,20 @@ RUN $SHELL
 #-----------------------------------------------------------------------------
 # Install Lua
 #-----------------------------------------------------------------------------
-RUN curl -L http://www.lua.org/ftp/lua-5.3.4.tar.gz -o /opt/lua-5.3.4.tar.gz \
-    && curl -L http://luarocks.github.io/luarocks/releases/luarocks-2.4.3.tar.gz \
-         -o /opt/luarocks-2.4.3.tar.gz
+RUN curl -L http://www.lua.org/ftp/lua-${LUA_VERSION}.tar.gz -o /opt/lua-${LUA_VERSION}.tar.gz \
+    && curl -L http://luarocks.github.io/luarocks/releases/luarocks-${LUAROCKS_VERSION}.tar.gz \
+         -o /opt/luarocks-${LUAROCKS_VERSION}.tar.gz
 
 RUN cd /opt \
-    && tar zxvf lua-5.3.4.tar.gz \
-    && tar zxvf luarocks-2.4.3.tar.gz \
-    && cd lua-5.3.4 \
+    && tar zxvf lua-${LUA_VERSION}.tar.gz \
+    && tar zxvf luarocks-${LUAROCKS_VERSION}.tar.gz \
+    && cd lua-${LUA_VERSION} \
     && make linux \
-    && cd ../luarocks-2.4.3 \
+    && cd ../luarocks-${LUAROCKS_VERSION} \
     && ./configure \
     && make \
     && sudo make install
-    
+
 #-----------------------------------------------------------------------------
 # Download & Install
 # -) vim
@@ -87,9 +89,9 @@ RUN cd /usr/local/src \
             --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
             --enable-python3interp \
             --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
-            --enable-luainterp \
-            --with-luajit \
-            --with-lua-prefix=/usr/include/lua5.3 \
+#           --enable-luainterp \
+#           --with-luajit \
+#           --with-lua-prefix=/usr/include/lua5.3 \
             --enable-cscope \
             --enable-gui=auto \
             --with-features=huge \
