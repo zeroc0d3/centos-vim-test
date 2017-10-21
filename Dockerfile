@@ -84,12 +84,12 @@ RUN cd /usr/local/src \
             --enable-multibyte \
             --enable-perlinterp=dynamic \
             --enable-rubyinterp=dynamic \
-            --with-ruby-command=`which ruby` \
+#           --with-ruby-command=`which ruby` \
             --enable-pythoninterp=dynamic \
-            --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
-            --enable-python3interp \
-            --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
-#           --enable-luainterp \
+#           --with-python-config-dir=/usr/lib/python2.7/config-x86_64-linux-gnu \
+#           --enable-python3interp \
+#           --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
+            --enable-luainterp \
 #           --with-luajit \
 #           --with-lua-prefix=/usr/include/lua5.3 \
             --enable-cscope \
