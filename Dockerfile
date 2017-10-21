@@ -12,6 +12,9 @@ USER root
 #-----------------------------------------------------------------------------
 # Find Fastest Repo & Update Repo
 #-----------------------------------------------------------------------------
+RUN curl -L https://copr.fedorainfracloud.org/coprs/mcepl/vim8/repo/epel-7/mcepl-vim8-epel-7.repo \
+      -o /etc/yum.repos.d/mcepl-vim8-epel-7.repo
+
 RUN yum makecache fast \
     && yum -y update
 
@@ -29,7 +32,7 @@ RUN yum -y install \
         ncurse-devel \
         lua-devel \ 
         lzo-devel \
-#       vim \
+        vim* \
 
 #-----------------------------------------------------------------------------
 # Clean Up All Cache
@@ -45,6 +48,23 @@ COPY ./rootfs/root/.zshrc /root/.zshrc
 COPY ./rootfs/root/.bashrc /root/.bashrc
 RUN $SHELL
 
+#-----------------------------------------------------------------------------
+# Install Lua
+#-----------------------------------------------------------------------------
+COPY ./rootfs/opt/lua-5.3.4.tar.gz /opt/lua-5.3.4.tar.gz
+RUN curl -L http://luarocks.github.io/luarocks/releases/luarocks-2.4.3.tar.gz \
+      -o /opt/luarocks-2.4.3.tar.gz
+
+RUN cd /opt \
+    && tar zxvf lua-5.3.4.tar.gz \
+    && tar zxvf luarocks-2.4.3.tar.gz \
+    && cd lua-5.3.4 \
+    && make linux \
+    && cd ../luarocks-2.4.3 \
+    && ./configure \
+    && make \
+    && sudo make install
+    
 #-----------------------------------------------------------------------------
 # Download & Install
 # -) vim
@@ -69,7 +89,7 @@ RUN cd /usr/local/src \
             --with-python3-config-dir=/usr/lib/python3.5/config-3.5m-x86_64-linux-gnu \
             --enable-luainterp \
             --with-luajit \
-            --with-lua-prefix=/usr/include/lua5.1 \
+            --with-lua-prefix=/usr/include/lua5.3 \
             --enable-cscope \
             --enable-gui=auto \
             --with-features=huge \
