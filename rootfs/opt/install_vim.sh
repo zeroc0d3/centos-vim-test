@@ -6,7 +6,7 @@
 # -) vundle + themes
 #-----------------------------------------------------------------------------
 cd /usr/local/src \
-  && sudo rm -rf /usr/local/share/vim /usr/bin/vim \
+# && sudo rm -rf /usr/local/share/vim /usr/bin/vim \
   && git clone https://github.com/vim/vim.git \
   && cd vim \
   && git checkout v${VIM_VERSION} \
