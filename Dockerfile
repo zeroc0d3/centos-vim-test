@@ -45,13 +45,13 @@ RUN yum -y install \
 # Prepare Install Ruby
 # -) copy .zshrc to /root
 # -) copy .bashrc to /root
-# -) copy installation scripts to /opt
 #-----------------------------------------------------------------------------
 COPY ./rootfs/root/.zshrc /root/.zshrc
 COPY ./rootfs/root/.bashrc /root/.bashrc
 COPY ./rootfs/opt/ruby.sh /etc/profile.d/ruby.sh
 COPY ./rootfs/opt/install_ruby.sh /opt/install_ruby.sh
 COPY ./rootfs/opt/reload_shell.sh /opt/reload_shell.sh
+# RUN exec $SHELL
 # RUN sudo /bin/sh /opt/install_ruby.sh
 
 #-----------------------------------------------------------------------------
